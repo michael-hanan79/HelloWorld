@@ -1,2 +1,2 @@
 # HelloWorld
-A learning project
+A learning project of the Tapuah Webmasters course
