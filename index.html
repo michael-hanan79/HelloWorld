@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>JQuery Exersises</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            	
+            	//Exersise 1
+                $("#but").click(function(){
+                    $("#p").hide();
+                });
+
+				//Exersise 2
+                $("button.change").click(function(){
+                    this.innerHTML +="1";
+                });
+                
+                //Exersise 3
+                $("#cont").mouseenter(function(){
+                	$("#txt").show(1000);
+                });
+                
+                $("#cont").mouseleave(function(e){
+	                $("#txt").hide(1000);
+                });
+                
+                
+                //Exersise 4
+                $("#down_bt").click(function(){
+                	$(this).css("top", "+=50");
+                });
+                
+                //Exersise 5
+                var pos="20px";
+                var positions=[
+                	{top:pos, left:pos, right:"", bottom:""},
+                	{top:pos, left:"", right:pos, bottom:""},
+                	{top:"", left:"", right:pos, bottom:pos},
+                	{top:"", left:pos, right:"", bottom:pos},
+					{top:pos, left:"40%", right:"", bottom:""},
+					{top:"", left:"55%", right:"", bottom:"pos"}
+                ];
+                var curpos=0;
+                $("#sal_bt").mouseenter(function(){
+                	var newpos;
+                	do{
+                		newpos=Math.floor(Math.random() * (6));
+                	}while(newpos==curpos);
+                	$(this).css(positions[newpos]);
+                	curpos=newpos;
+                });
+                
+
+            });
+        </script>
+        <style>
+        	#cont {position:relative; width:60%}
+        	#im {width:100%}
+        	#txt {
+        		position:absolute;
+        		bottom:0;
+        		line-height:100px;
+        		font-size:60px;
+        		background:rgba(255,255,255,0.5);
+        		text-align:center;
+        		display:none;
+        		width:100%
+        	}
+        	
+        	#down_bt {position:relative; top:0}
+        	
+        	#cont5{
+        		position:relative;
+        		width:50%;
+        		height:30%;
+        		background:lightblue;
+        		border: 3px outset blue;
+        		padding:2%
+        	}
+        	
+        	#sal_bt {position:absolute}
+        	
+        	#im6 {width:40%}
+        	#im6:hover {width:80%}
+        </style>
+    </head>
+    <body>
+        <h2>Exersise 1</h2>
+        <input type="button" id="but" value="Hide it" />
+        <p id="p">Here is some text</p>
+
+
+        <h2>Exersise 2</h2>
+        <p>
+            <button class="change">Click me: </button>
+        </p>
+        <p>
+            <button class="change">Click me: </button>
+        </p>
+        <p>
+            <button class="change">Click me: </button>
+        </p>
+        
+        <h2>Exersise 3</h2>
+        <div id="cont">
+			<img id="im" src="http://anek.ws/kosta/kurs/galery/1.jpg" />
+			<div id="txt">This is a picture</div>
+		</div>
+		
+		<h2>Exersise 4</h2>
+		<button id="down_bt">Click down</button>
+		
+		<h2>Exersise 5</h2>
+		<div id="cont5">
+			If you whant to incrase your sallary then click here:
+			<button id="sal_bt">Incrase sallary</button>
+		</div>
+		
+		<h2>Exersise 6</h2>
+		<img id="im6" src="http://anek.ws/kosta/kurs/galery/3.jpg" />
+    </body>
+</html>
